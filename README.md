@@ -1,60 +1,111 @@
-# template-python-app
-[![example workflow](https://github.com/frdedynamics/template-python-app/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/frdedynamics/template-python-app/actions/workflows/CI.yml)
-[![example workflow](https://github.com/frdedynamics/template-python-app/actions/workflows/build-and-push-image-to-ghcr.yml/badge.svg?branch=main)](https://github.com/frdedynamics/template-python-app/actions/workflows/build-and-push-image-to-ghcr.yml)
+# GPT Models Experimentation with RAG Techniques
 
+[![CI Workflow](https://github.com/your-username/your-repo/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/your-username/your-repo/actions/workflows/CI.yml)
+[![Build and Push Image](https://github.com/your-username/your-repo/actions/workflows/build-and-push-image-to-ghcr.yml/badge.svg?branch=main)](https://github.com/your-username/your-repo/actions/workflows/build-and-push-image-to-ghcr.yml)
 [![Ruff format](https://img.shields.io/endpoint?url=https%3A%2F%2Fgist.githubusercontent.com%2FJacobCoffee%2Fbfb02a83c8da3cbf53f7772f2cee02ec%2Fraw%2Facb94daa3aedecda67e2c7d8c5aec9765db0734d%2Fformat-badge.json)](https://github.com/astral-sh/ruff)
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 
-Hi! :wave: This is a template GitHub repository for Python.
+Hi there! :wave:  
+This repository is dedicated to exploring and experimenting with GPT-based models—both pretrained and self-trained—with a focus on integrating Retrieval-Augmented Generation (RAG) techniques. The goal of the project is to investigate whether we can train our own GPT model and make it work effectively with RAG methods.
 
-> Does this template fit you? Do you know better? Please consider starring the repo, making a PR, and maybe check out https://goodtech.no/career 😇
+## Project Overview
 
-CI is automatic by default as:
-```yaml
-on: 
-   pull_request: 
-     branches: ["main"] 
-   workflow_dispatch: 
+This project is organized into several modules:
+- **Pretrained Models:** Modules for working with popular pretrained models (e.g., GPT-2 from Hugging Face).
+- **Self-Trained Models:** Code to train or fine-tune your own GPT model.
+- **RAG Techniques:** Integration of retrieval mechanisms to enhance the generation quality of GPT models.
+
+## Features
+
+- **Modular Codebase:**  
+  Separate modules for pretrained and self-trained GPT models, as well as RAG integration, to facilitate experimentation and development.
+
+- **Console Application:**  
+  An interactive console app that demonstrates how to load a GPT model, prompt the user for input, and generate text.
+
+- **Local Model Storage:**  
+  Easily save and load GPT models from a local directory to avoid unnecessary downloads and to support offline work.
+
+- **Configuration Management:**  
+  Utilize configuration files to manage environment variables and secrets, ensuring sensitive data is kept secure across different environments.
+
+- **CI/CD and Code Quality:**  
+  Preconfigured workflows for continuous integration and automated builds are available. Code formatting and linting are enforced using tools like Ruff.
+
+## Getting Started
+
+### Prerequisites
+
+- **Python:** Version 3.8 or later  
+- **PyTorch:** Ensure compatibility with your hardware (GPU support if available)  
+- **Transformers:** Hugging Face Transformers library for model management
+
+### Installation
+
+1. **Clone the Repository:**
+
+   ```bash
+   git clone https://github.com/your-username/your-repo.git
+   cd your-repo
+   ```
+
+2. **Create and Activate a Virtual Environment:**
+
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows use: venv\Scripts\activate
+   ```
+
+3. **Install Dependencies with `pyproject.toml`:**
+
+   ```bash
+   pip install -e .
+   ```
+
+   Make sure you have a valid `pyproject.toml` file with the required dependencies listed under `[project]` or `[tool.poetry.dependencies]`.
+
+### ML-Models are not included. And should be downloaded and added to this folder:
+
+```bash
+./ml-modles/nameofmodel/
 ```
 
-Build is manual by default. To enable automatic build, change:
-https://github.com/frdedynamics/template-python-app/blob/73649f6627dd8912358aa702ea8ad4536bb26975/.github/workflows/build-and-push-image-to-ghcr.yml#L12-L13
+### Running the Console Application
 
-to:
-```yaml
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-  workflow_dispatch:
+Run the following command from the project root:
+
+```bash
+python app.py
 ```
-to get epic tests (you do write tests right? :thinking:)
 
-Built Docker image pushed to ghcr (GitHub Container Registry, not Docker Hub by default), will end up to the right under Packages like this:
-![image](https://user-images.githubusercontent.com/119582611/205160381-d47b6147-46cf-4cd4-8d58-bcf4ec5737de.png)
+Follow the on-screen instructions to interact with the GPT model via the console.
 
-## Config and secrets
-The config folder is set up with .toml files for local, developement, and production.
-Intended use is to keep GitHub secrets secret in development and producition toml, while local shall only have not secret test variables.
-Secrets must be made and match the secret name in the tomls e.g. ENV_SECRET_SDT_MQTT_BROKER_URL.
-Secrets are read and populated by `config.replace_env_vars`.
-Secrets can be made at different levels where the "lowest" (repo) level takes precendse.
 
-Levels are: Organisation (ORG_), repo environment (ENV_), and repo (REP_).
-If not secret, consider making the variable a not so secret GitHub variable, e.g. ENV_VAR_SHOW_ME_THE_LOGS.
-More on GitHub secrets: [Manage secrets](https://docs.github.com/en/codespaces/managing-codespaces-for-your-organization/managing-secrets-for-your-repository-and-organization-for-github-codespaces)
 
-## Pin versions!
-Pinning versions makes applications reproducible and updates managable. Use dependabot to automatically open PR's for version updates, and since you write tests you can approve and merge with confidence.
-Not all dependencies are created equal, see [Semantic Dependencies](https://peps.python.org/pep-0426/#semantic-dependencies). The most important deps to keep tabs on are the "runtime dependencies", dev not so much.
-See [Version Specifiers](https://packaging.python.org/en/latest/specifications/version-specifiers/#id4) for options of pinning.
 
-Example (feel free to remove this pin as you see fit): https://github.com/frdedynamics/template-python-app/blob/b4b3607a1427f49599aa141eb384fcfad4078af7/pyproject.toml#L6
+## Configuration and Secrets
 
-## Live share
-Useful for sharing live. Collaborate.
+- **Configuration Files:**  
+  The project includes configuration files for local, development, and production environments. These files help manage sensitive environment variables securely.
 
-Use Ctrl+Shift+P and type "live share" for options:
+- **GitHub Secrets:**  
+  When deploying or running tests on GitHub, ensure that your secrets are set up to match the variable names in the configuration files (e.g., `ENV_MODEL_URL`).
 
-GLHF :partying_face:
+## Project Goals
+
+- **Custom GPT Model Training:**  
+  Experiment with training our own GPT model or fine-tuning a pretrained model to suit your specific needs.
+
+- **RAG Integration:**  
+  Explore techniques to combine retrieval methods with generative models, aiming to enhance text generation quality and relevance.
+
+- **Reproducibility:**  
+  By pinning dependency versions and using configuration files, the project aims for reproducible and manageable experiments.
+
+## License
+
+This project is licensed under the MIT License – see the [LICENSE](LICENSE) file for details.
+
+
+Happy coding and experimenting with GPT models and RAG techniques!
+
