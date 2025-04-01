@@ -134,3 +134,4 @@ coverage.lcov
 
 # Machine Learning models
 /ml-models/
+.safetensor
