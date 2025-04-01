@@ -131,3 +131,6 @@ dmypy.json
 # Pyre type checker
 .pyre/
 coverage.lcov
+
+# Machine Learning models
+/ml-models/
