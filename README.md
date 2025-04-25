@@ -1,7 +1,9 @@
 # CustomBERT model for learning, and experemetning about deep learning and NLP
+## Template from setup is forked from frdedynamics, it is originally a basic template repo with devcontainers and workflows++
 ## IMOPORTANT This repository contains a lot of code that have been used to experiment with different problem statements. The important notebook however is [Encoder Only Notebook](https://github.com/Kaoskontoret/DAT255-rag-gpts/blob/main/src/transformerspackage/encoder_only_embedder_nn.ipynb). This contains all code relevant for the assignment
 
 ## The notebook have changed drastically over the training of the different models. And the models are localy downloaded on our computers. 
+## It is developed and inspired by the known BERT architecture. We did not invent this, but have experimented with training it and building it using the torch framework
 
 ## To run the model the following steps are required. 
 Download the requirements.txt
