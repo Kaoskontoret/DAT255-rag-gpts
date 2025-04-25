@@ -1,6 +1,5 @@
 # CustomBERT model for learning, and experemetning about deep learning and NLP
-This repository contains a lot of code that have been used to experiment with different problem statements.
-The important notebook however is [Encoder Only Notebook](https://github.com/Kaoskontoret/DAT255-rag-gpts/blob/main/src/transformerspackage/encoder_only_embedder_nn.ipynb).
+## IMOPORTANT This repository contains a lot of code that have been used to experiment with different problem statements. The important notebook however is [Encoder Only Notebook](https://github.com/Kaoskontoret/DAT255-rag-gpts/blob/main/src/transformerspackage/encoder_only_embedder_nn.ipynb). This contains all code relevant for the assignment
 
 ## The notebook have changed drastically over the training of the different models. And the models are localy downloaded on our computers. 
 
