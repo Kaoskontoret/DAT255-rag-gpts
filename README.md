@@ -20,4 +20,4 @@ pip install -r requirements.txt
 
 To run models, one only needs download the datasets using the relevant cells, and train the tokenizer. Some models have 30000 and some 10000 as vocab. This need to be alternated when running the different models. After the traing of custombert there are some cells for testing an loading models, and running tests. one Subjective top 10 predictions for us humans to enjoy, and a mlm evaluation cell under to use for metrics.
 
-Some cells are developed passed what have actually been used because of little time, this chaos has also resulted in 
+Some cells are developed passed what we have actually been able to train on, because the iterations took to much time. See it as a cookingstation where not all the pots have been properly cleaned...
